@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>metodos_quantitativos - 6&nbsp; Aula 04</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./aula03.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./aula04.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Aula 04</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">metodos_quantitativos</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aula01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Aula 01</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aula02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Aula 02</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aula03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aula 03</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aula04.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Aula 04</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">6.0.1</span> Introdução</a></li>
+  <li><a href="#definição---vetor-aleatório" id="toc-definição---vetor-aleatório" class="nav-link" data-scroll-target="#definição---vetor-aleatório"><span class="header-section-number">6.0.2</span> Definição - Vetor aleatório</a></li>
+  <li><a href="#definição-a-função-distribuição-acumulada" id="toc-definição-a-função-distribuição-acumulada" class="nav-link" data-scroll-target="#definição-a-função-distribuição-acumulada"><span class="header-section-number">6.0.3</span> Definição: A Função Distribuição Acumulada</a></li>
+  <li><a href="#definição-função-probabilidade-e-função-densidade-de-probabilidade" id="toc-definição-função-probabilidade-e-função-densidade-de-probabilidade" class="nav-link" data-scroll-target="#definição-função-probabilidade-e-função-densidade-de-probabilidade"><span class="header-section-number">6.0.4</span> Definição: Função Probabilidade e função Densidade de Probabilidade</a></li>
+  <li><a href="#definição-função-de-probabilidade-conjunta" id="toc-definição-função-de-probabilidade-conjunta" class="nav-link" data-scroll-target="#definição-função-de-probabilidade-conjunta"><span class="header-section-number">6.0.5</span> Definição: Função de Probabilidade Conjunta</a></li>
+  <li><a href="#definição-densidade-condicional" id="toc-definição-densidade-condicional" class="nav-link" data-scroll-target="#definição-densidade-condicional"><span class="header-section-number">6.0.6</span> Definição: Densidade Condicional</a></li>
+  <li><a href="#exemplo" id="toc-exemplo" class="nav-link" data-scroll-target="#exemplo"><span class="header-section-number">6.0.7</span> Exemplo</a></li>
+  <li><a href="#média-condicional-e-variância-condicional" id="toc-média-condicional-e-variância-condicional" class="nav-link" data-scroll-target="#média-condicional-e-variância-condicional"><span class="header-section-number">6.0.8</span> Média condicional e variância condicional</a></li>
+  <li><a href="#definição-esperança-condicional" id="toc-definição-esperança-condicional" class="nav-link" data-scroll-target="#definição-esperança-condicional"><span class="header-section-number">6.0.9</span> Definição (Esperança condicional)</a></li>
+  <li><a href="#definição-variância-condicional" id="toc-definição-variância-condicional" class="nav-link" data-scroll-target="#definição-variância-condicional"><span class="header-section-number">6.0.10</span> Definição: Variância condicional</a></li>
+  <li><a href="#definição-independência" id="toc-definição-independência" class="nav-link" data-scroll-target="#definição-independência"><span class="header-section-number">6.0.11</span> Definição: Independência</a></li>
+  <li><a href="#exemplo-1---seja-x-e-y-variáveis-aleatórias-discretas-com-densidade-conjunta-dado-a-seguir" id="toc-exemplo-1---seja-x-e-y-variáveis-aleatórias-discretas-com-densidade-conjunta-dado-a-seguir" class="nav-link" data-scroll-target="#exemplo-1---seja-x-e-y-variáveis-aleatórias-discretas-com-densidade-conjunta-dado-a-seguir"><span class="header-section-number">6.0.12</span> Exemplo 1 - Seja <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> variáveis aleatórias discretas com densidade conjunta dado a seguir:</a></li>
+  <li><a href="#solução" id="toc-solução" class="nav-link" data-scroll-target="#solução"><span class="header-section-number">6.0.13</span> Solução</a></li>
+  <li><a href="#definição-esperança-matemática" id="toc-definição-esperança-matemática" class="nav-link" data-scroll-target="#definição-esperança-matemática"><span class="header-section-number">6.0.14</span> Definição: Esperança Matemática</a></li>
+  <li><a href="#exercício" id="toc-exercício" class="nav-link" data-scroll-target="#exercício"><span class="header-section-number">6.0.15</span> Exercício:</a></li>
+  <li><a href="#aplicações" id="toc-aplicações" class="nav-link" data-scroll-target="#aplicações"><span class="header-section-number">6.0.16</span> Aplicações:</a></li>
+  <li><a href="#observe" id="toc-observe" class="nav-link" data-scroll-target="#observe"><span class="header-section-number">6.0.17</span> Observe:</a></li>
+  <li><a href="#cálculo-de-ex_i-ε_ix_i" id="toc-cálculo-de-ex_i-ε_ix_i" class="nav-link" data-scroll-target="#cálculo-de-ex_i-ε_ix_i"><span class="header-section-number">6.0.18</span> Cálculo de <span class="math inline">\(E(x_i ε_i|x_i)\)</span></a></li>
+  <li><a href="#teorema---função-geradora-de-momentos-para-combinações-lineares" id="toc-teorema---função-geradora-de-momentos-para-combinações-lineares" class="nav-link" data-scroll-target="#teorema---função-geradora-de-momentos-para-combinações-lineares"><span class="header-section-number">6.0.19</span> Teorema - Função Geradora de Momentos para Combinações Lineares</a></li>
+  <li><a href="#covariância" id="toc-covariância" class="nav-link" data-scroll-target="#covariância"><span class="header-section-number">6.0.20</span> Covariância</a></li>
+  <li><a href="#correlação" id="toc-correlação" class="nav-link" data-scroll-target="#correlação"><span class="header-section-number">6.0.21</span> Correlação</a></li>
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema"><span class="header-section-number">6.0.22</span> Teorema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Aula 04</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introdução" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">6.0.1</span> Introdução</h3>
+<p>Neste capítulo buscamos examinar possíveis relações entre duas ou mais variáveis aleatórias. As noções de probabilidade condicional e independência descritas nos capítulos anteriores serão requeridas novamente em um contexto multivariado.</p>
+<p>Neste capítulo apresentaremos os seguintes temas:</p>
+<ul>
+<li>Apresentar a distribuição de probabilidades conjuntas para expressar a relação entre dois ou mais variáveis.</li>
+<li>Encontrar distribuições de probabilidades marginais que mostrem o comportamento de uma única variável sem o efeito das outras.</li>
+<li>Apresentar a distribuição de probabilidades condicionais que expressam o efeito de um subconjunto de variáveis sobre outro subconjunto de variáveis.</li>
+<li>Definir e verificar as implicações da independência entre variáveis aleatórias.</li>
+<li>Definir medidas de associação entre duas variáveis, tais como a covariância e correlação.</li>
+</ul>
+</section>
+<section id="definição---vetor-aleatório" class="level3" data-number="6.0.2">
+<h3 data-number="6.0.2" class="anchored" data-anchor-id="definição---vetor-aleatório"><span class="header-section-number">6.0.2</span> Definição - Vetor aleatório</h3>
+<p>Considere uma experiência aleatória com espaço amostral (<span class="math inline">\(\Omega\)</span>), gerando o espaço de probabilidade (<span class="math inline">\(( \Omega,F,P)\)</span>). Sejam (<span class="math inline">\(X_1, X_2, X_3, \ldots, X_k\)</span>), funções que associam números reais a cada resultado da experiência. Então, (<span class="math inline">\((X_1, X_2, X_3, \ldots, X_k)\)</span>) é um vetor aleatório da dimensão (<span class="math inline">\(k\)</span>). Em particular, temos (<span class="math inline">\(k = 2\)</span>), (<span class="math inline">\((X_1, X_2)\)</span>) será chamado de vetor aleatório bidimensional ou variável aleatória bidimensional.</p>
+</section>
+<section id="definição-a-função-distribuição-acumulada" class="level3" data-number="6.0.3">
+<h3 data-number="6.0.3" class="anchored" data-anchor-id="definição-a-função-distribuição-acumulada"><span class="header-section-number">6.0.3</span> Definição: A Função Distribuição Acumulada</h3>
+<p>Um vetor aleatório bivariado (<span class="math inline">\(x, y\)</span>) é:</p>
+<p><span class="math inline">\(F(x,y) = P(\omega \in \Omega: X(\omega) \leq x, Y(\omega) \leq y)\)</span></p>
+<p><span class="math inline">\(F(x,y) = P(X \leq x \text{ e } Y \leq y) = P(X \leq x , Y \leq y)\)</span></p>
+<p>Em geral, para (<span class="math inline">\(k\)</span>) variáveis aleatórias:</p>
+<p><span class="math inline">\((\text{Digite})\)</span></p>
+</section>
+<section id="definição-função-probabilidade-e-função-densidade-de-probabilidade" class="level3" data-number="6.0.4">
+<h3 data-number="6.0.4" class="anchored" data-anchor-id="definição-função-probabilidade-e-função-densidade-de-probabilidade"><span class="header-section-number">6.0.4</span> Definição: Função Probabilidade e função Densidade de Probabilidade</h3>
+<p><strong>Discreto:</strong></p>
+<p><span class="math inline">\(f(x,y) = P(X=x, Y=y) = P(\omega \in \Omega: X(\omega)=x, Y(\omega)=y)\)</span></p>
+<p><strong>Contínuo:</strong></p>
+<p><span class="math inline">\(f(x,y) = \frac{\partial^2 F(x,y)}{\partial x \partial y}\)</span></p>
+<p>Da definição, calculamos (<span class="math inline">\(F\)</span>) como:</p>
+<p><span class="math inline">\(F(x_0,y_0) = \int_{-\infty}^{x_0} \int_{-\infty}^{y_0} f(x,y) \, dx \, dy\)</span></p>
+</section>
+<section id="definição-função-de-probabilidade-conjunta" class="level3" data-number="6.0.5">
+<h3 data-number="6.0.5" class="anchored" data-anchor-id="definição-função-de-probabilidade-conjunta"><span class="header-section-number">6.0.5</span> Definição: Função de Probabilidade Conjunta</h3>
+<p><strong>Variáveis aleatórias discretas:</strong></p>
+<p>Sejam (<span class="math inline">\(X_1\)</span>) e (<span class="math inline">\(X_2\)</span>) variáveis aleatórias discretas. A densidade conjunta (<span class="math inline">\(f(x_1,x_2)\)</span>) é uma função não-negativa tal que:</p>
+<p><span class="math inline">\(f(x_1,x_2) = P(X_1=x_1, X_2=x_2)\)</span></p>
+<p>e satisfaz:</p>
+<ol type="i">
+<li><p>Propriedade 1: (<span class="math inline">\(0 &lt; f(x_1,x_2) &lt; 1\)</span>)</p></li>
+<li><p>Propriedade 2:</p></li>
+</ol>
+<p><span class="math inline">\(\sum_{\forall x_1} \sum_{\forall x_2} f(x_1,x_2) = \sum_{\forall x_1} \sum_{\forall x_2} P(X_1=x_1, X_2=x_2) = 1\)</span></p>
+<p>Essa definição pode ser estendida para (<span class="math inline">\(n\)</span>) variáveis (<span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>):</p>
+<p><span class="math inline">\(f(x_1,x_2,\ldots,x_n) = P(X_1=x_1, X_2=x_2, \ldots, X_n=x_n)\)</span></p>
+<p><span class="math inline">\(\sum_{\forall x_1} \ldots \sum_{\forall x_n} P(X_1=x_1, X_2=x_2, \ldots, X_n=x_n) = \sum_{\forall x_1} \ldots \sum_{\forall x_n} f(x_1,\ldots,x_n) = 1\)</span></p>
+<p><strong>Variáveis aleatórias contínuas:</strong></p>
+<p>Sejam (<span class="math inline">\(X_1\)</span>) e (<span class="math inline">\(X_2\)</span>) variáveis aleatórias contínuas. A função densidade conjunta de (<span class="math inline">\(X_1\)</span>) e (<span class="math inline">\(X_2\)</span>) é uma função (<span class="math inline">\(f(x_1,x_2)\)</span>):</p>
+<p><span class="math inline">\(f: \mathbb{R}^2 \rightarrow \mathbb{R}^+\)</span></p>
+<p>com as seguintes propriedades:</p>
+<ol type="i">
+<li><p>Propriedade 1: (<span class="math inline">\(f(x_1,x_2) &gt; 0\)</span>)</p></li>
+<li><p>Propriedade 2:</p></li>
+</ol>
+<p><span class="math inline">\(\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x_1,x_2) \, dx_2 \, dx_1 = 1\)</span></p>
+<p>Para algum (<span class="math inline">\(A \subset \mathbb{R}^2\)</span>) podemos definir como:</p>
+<p><span class="math inline">\(P((X_1,X_2) \in A) = \iint_A f(x_1,x_2) \, dx_1 \, dx_2\)</span></p>
+<p>Ou também da seguinte forma:</p>
+<p>Para calcular a probabilidade de (<span class="math inline">\(X_1\)</span>) e (<span class="math inline">\(X_2\)</span>) estarem em intervalos de números reais, calculamos a integral:</p>
+<p><span class="math inline">\(P(a \leq X_1 \leq b, c \leq X_2 \leq d) = \int_a^b \int_c^d f(x_1,x_2) \, dx_1 \, dx_2\)</span></p>
+<p>OBS: Colocar uma figura mostrando o volume (DIGITAR)</p>
+<p>Podemos estender para o caso de (<span class="math inline">\(n\)</span>) variáveis (<span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>):</p>
+<p><span class="math inline">\(P(a \leq X_1 \leq b, \ldots, c \leq X_n \leq d) = \int_a^b \ldots \int_c^d f(x_1,\ldots,x_n) \, dx_1 \ldots dx_n\)</span></p>
+<p>OBS: No caso discreto, a função de distribuição conjunta representa uma probabilidade envolvendo (<span class="math inline">\(X_1\)</span>) e (<span class="math inline">\(X_2\)</span>), o mesmo não ocorre no caso contínuo. <span class="math inline">\(P(X_1 \leq x_1, \ldots, X_n \leq x_n)\)</span></p>
+<p><span class="math inline">\(F(x_1,\ldots,x_n) = \sum_{\forall x_1} \ldots \sum_{\forall x_n} P(X_1 \leq x_1, \ldots, X_n \leq x_n)\)</span></p>
+</section>
+<section id="definição-densidade-condicional" class="level3" data-number="6.0.6">
+<h3 data-number="6.0.6" class="anchored" data-anchor-id="definição-densidade-condicional"><span class="header-section-number">6.0.6</span> Definição: Densidade Condicional</h3>
+<p>A função probabilidade ou densidade condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> é definida se <span class="math inline">\(f_{\cdot}(x) &gt; 0\)</span> e é dada por:</p>
+<p><span class="math inline">\(f(Y|X) = \frac{f(x,y)}{f(x)}\)</span></p>
+<p>Lembre-se da definição de probabilidade condicional para eventos:</p>
+<p><span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p>
+<p>Observe que:</p>
+<p><span class="math inline">\(f(Y|X) \neq f(X|Y)\)</span></p>
+<p>Analogamente, a função probabilidade ou densidade condicional de <span class="math inline">\(X\)</span> dado <span class="math inline">\(Y\)</span> é definida se <span class="math inline">\(f_{\cdot}(Y) &gt; 0\)</span> e é dada por:</p>
+<p><span class="math inline">\(f(X|Y) = \frac{f(x,y)}{f(y)}\)</span></p>
+</section>
+<section id="exemplo" class="level3" data-number="6.0.7">
+<h3 data-number="6.0.7" class="anchored" data-anchor-id="exemplo"><span class="header-section-number">6.0.7</span> Exemplo</h3>
+<p>Coloque verdadeiro e falso:</p>
+<ul>
+<li>( <span class="math inline">\(f(Y|X) = f(X|Y)\)</span> )</li>
+<li>( <span class="math inline">\(f(Y|X=1) = f(Y|X=2)\)</span> )</li>
+<li>( <span class="math inline">\(E((Y|X=1)) = E(Y|X=2)\)</span> )</li>
+</ul>
+<p><strong>Solução:</strong> Todas são falsas.</p>
+<p>Esta definição é análoga à definição de probabilidade condicional para eventos.</p>
+<p>Com esta definição podemos calcular probabilidades do tipo:</p>
+<p><span class="math inline">\(P(a &lt; Y &lt; b|X=x) = \int_a^b f(Y|X=x) \, dy\)</span></p>
+<p>É a probabilidade condicional de que <span class="math inline">\(a &lt; Y &lt; b\)</span> dado que <span class="math inline">\(X = x\)</span>.</p>
+<p>Nota: não faz diferença os símbolos &lt;, menor igual no caso contínuo. Para o caso discreto, temos:</p>
+<p><span class="math inline">\(P(Y \leq a|X=x) = \sum_{\forall y} P(Y|X=x) = \sum{\forall y} f(Y|X=x)\)</span></p>
+<p>Para uma variável aleatória contínua essa densidade permite calcular probabilidades condicionais:</p>
+<p><span class="math inline">\(P(a &lt; y &lt; b|X=x) = \int_a^b f(Y|x) \, dy\)</span></p>
+<p>Ou</p>
+<p><span class="math inline">\(P(a &lt; y &lt; b|X=1) = \int_a^b f(Y|X=1) \, dy\)</span></p>
+<p>Usando como informativo a variável <span class="math inline">\(Y\)</span>:</p>
+<p><span class="math inline">\(P(a &lt; x &lt; b|Y=1) = \int_a^b f(X|Y=1) \, dx\)</span></p>
+</section>
+<section id="média-condicional-e-variância-condicional" class="level3" data-number="6.0.8">
+<h3 data-number="6.0.8" class="anchored" data-anchor-id="média-condicional-e-variância-condicional"><span class="header-section-number">6.0.8</span> Média condicional e variância condicional</h3>
+<p>Lembre-se do cálculo da média incondicional:</p>
+<ul>
+<li>V.a.d → ( <span class="math inline">\(E(X) = \sum_{x=-\infty}^{\infty} x \, P(X=x)\)</span> )</li>
+<li>V.a.c → ( <span class="math inline">\(E(X) = \int_{-\infty}^{\infty} x \, f(x) \, dx\)</span> )</li>
+</ul>
+<p>Por exemplo, desejamos calcular <span class="math inline">\(E(Y|X)\)</span>. Como procedemos?</p>
+<p><span class="math inline">\(E(Y|X) = \int y \, f(Y|X) \, dy\)</span></p>
+<p>Da definição:</p>
+<p><span class="math inline">\(f(Y|X) = \frac{f(x,y)}{f(x)}\)</span></p>
+</section>
+<section id="definição-esperança-condicional" class="level3" data-number="6.0.9">
+<h3 data-number="6.0.9" class="anchored" data-anchor-id="definição-esperança-condicional"><span class="header-section-number">6.0.9</span> Definição (Esperança condicional)</h3>
+<p>Seja <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> variáveis aleatórias contínuas, então, a esperança condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>, denotado por <span class="math inline">\(E(Y|X)\)</span>, é dado por:</p>
+<p><span class="math inline">\(E(Y|X) = \int_{-\infty}^{\infty} y \, f(Y|X) \, dy\)</span></p>
+<p>A definição para o caso discreto é análoga.</p>
+<p><span class="math inline">\(E(Y|X) = \sum_{x=-\infty}^{\infty} y \, f(Y|X)\)</span></p>
+</section>
+<section id="definição-variância-condicional" class="level3" data-number="6.0.10">
+<h3 data-number="6.0.10" class="anchored" data-anchor-id="definição-variância-condicional"><span class="header-section-number">6.0.10</span> Definição: Variância condicional</h3>
+<p>A variância de distribuição <span class="math inline">\(f(X|Y)\)</span> é chamada de variância condicional a <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>.</p>
+<p>Variância Condicional</p>
+<p><span class="math inline">\(\text{Var}(Y|X) = E[(Y-E(Y|X))^2|X]\)</span></p>
+<p>Ou também:</p>
+<p><span class="math inline">\(\text{Var}(Y|X) = E(Y^2 |X) - (E(Y|X))^2\)</span></p>
+<p>Para um determinado valor de <span class="math inline">\(X=x\)</span>:</p>
+<p><span class="math inline">\(\text{Var}(Y|X=x) = E[(Y-E(Y|X=x))^2|X=x]\)</span></p>
+<p>Por exemplo para <span class="math inline">\(x=2\)</span>:</p>
+<p><span class="math inline">\(\text{Var}(Y|X=2) = E[(Y-E(Y|X=2))^2|X=2]\)</span></p>
+</section>
+<section id="definição-independência" class="level3" data-number="6.0.11">
+<h3 data-number="6.0.11" class="anchored" data-anchor-id="definição-independência"><span class="header-section-number">6.0.11</span> Definição: Independência</h3>
+<p>As variáveis aleatórias <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são estatisticamente independentes se somente se:</p>
+<p><span class="math inline">\(f(X|Y) = f(X), \forall x \text{ e } \forall y\)</span></p>
+<p>Lembre da definição para eventos independentes:</p>
+<p><span class="math inline">\(P(A|B) = P(A)\)</span></p>
+<p>Dizemos que o evento <span class="math inline">\(A\)</span> é independente do evento <span class="math inline">\(B\)</span>.</p>
+<p>Da mesma forma:</p>
+<p><span class="math inline">\(f(Y|X) = f(Y), \forall x \text{ e } \forall y\)</span></p>
+<p>Suponha que <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> são variáveis aleatórias independentes. Da definição de probabilidade condicional:</p>
+<p><span class="math inline">\(f(Y) = f(Y|X) = \frac{f(X,Y)}{f(X)}\)</span></p>
+<p>Rearranjando os termos chegamos ao resultado de que quando <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes temos igualdade entre a densidade conjunta e o produto das densidades marginais:</p>
+<p><span class="math inline">\(f(X,Y) = f(X)f(Y)\)</span></p>
+</section>
+<section id="exemplo-1---seja-x-e-y-variáveis-aleatórias-discretas-com-densidade-conjunta-dado-a-seguir" class="level3" data-number="6.0.12">
+<h3 data-number="6.0.12" class="anchored" data-anchor-id="exemplo-1---seja-x-e-y-variáveis-aleatórias-discretas-com-densidade-conjunta-dado-a-seguir"><span class="header-section-number">6.0.12</span> Exemplo 1 - Seja <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> variáveis aleatórias discretas com densidade conjunta dado a seguir:</h3>
+<span class="math display">\[\begin{array}{|c|c|c|c|}
+\hline
+P(Y=y) &amp; X=0 &amp; X=1 &amp; X=2 &amp; X=3 \\
+\hline
+y=0 &amp; 0,3 &amp; 0 &amp; 0,1 &amp; 0 \\
+y=1 &amp; 0,1 &amp; 0,1 &amp; 0,1 &amp; 0,1 \\
+y=2 &amp; 0 &amp; 0,1 &amp; 0,1 &amp; 0 \\
+\hline
+\end{array}\]</span>
+<p>Pede-se:</p>
+<ul>
+<li>Encontre as densidades marginais <span class="math inline">\(f(X)\)</span> e <span class="math inline">\(f(Y)\)</span></li>
+<li>Encontre <span class="math inline">\(E(X)\)</span> e <span class="math inline">\(\text{Var}(X)\)</span></li>
+<li>Encontre a densidade condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X=1\)</span></li>
+<li>Encontre a densidade condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X=0\)</span></li>
+<li>Encontre <span class="math inline">\(E(Y|X=1)\)</span> e a <span class="math inline">\(\text{Var}(Y|X=1)\)</span></li>
+</ul>
+<p><strong>Solução</strong></p>
+<ol type="a">
+<li>Inicialmente, observamos que temos variáveis aleatórias discretas com valores para <span class="math inline">\(X\)</span> de {0, 1, 2, 3} e valores para <span class="math inline">\(Y\)</span> de {0, 1, 2}. Portanto,</li>
+</ol>
+<p><span class="math inline">\(f(x) = \sum_{\forall y} f(x,y)\)</span> ou <span class="math inline">\(f(x) = \sum{\forall y} P(X=x,Y=y)\)</span></p>
+<p><span class="math inline">\(f(x) = \sum_{\forall y} f(x,y) = f(x,0) + f(x,1) + f(x,2) = P(X=x,Y=0) + P(X=x,Y=1) + P(X=x,Y=2)\)</span></p>
+<span class="math display">\[\begin{array}{|c|c|}
+\hline
+X &amp; f(x)=P(X=x) \\
+\hline
+0 &amp; 0,4 \\
+1 &amp; 0,2 \\
+2 &amp; 0,3 \\
+3 &amp; 0,1 \\
+\hline
+\end{array}\]</span>
+<p>Falta encontrar para <span class="math inline">\(f(y)\)</span> (DIGITAR)</p>
+<ol start="2" type="a">
+<li>Para calcular a esperança <span class="math inline">\(E(X)\)</span> então: Como é uma variável aleatória discreta: <span class="math inline">\(E(X) = \sum_{x=-\infty}^{\infty} x P(X=x)\)</span> <span class="math inline">\(E(X) = x_0 P(X=x_0) + x_1 P(X=x_1) + x_2 P(X=x_2) + x_3 P(X=x_3)\)</span> <span class="math inline">\(E(X) = 0(0,4) + 1(0,2) + 2(0,3) + 3(0,1)\)</span> <span class="math inline">\(E(X) = 0,2 + 0,6 + 0,3 = 1,1\)</span></li>
+</ol>
+<p>Para calcular a <span class="math inline">\(\text{Var}(X)\)</span> então: <span class="math inline">\(\sigma^2 = \text{Var}(X) = E[(X-μ)^2] = \sum_{i=1}^n (x_i-μ)^2 P(X=x_i) = \sum_{i=1}^n (x_i-μ)^2 f(x_i)\)</span> <span class="math inline">\(\sigma^2 = \text{Var}(X) = (0-1,1)^2 \cdot 0,4 + (1-1,1)^2 \cdot 0,2 + (2-1,1)^2 \cdot 0,3 + (3-1,1)^2 \cdot 0,1 = 1,09\)</span></p>
+<ol start="3" type="a">
+<li>Encontre a densidade condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X=1\)</span>:</li>
+</ol>
+<p><span class="math inline">\(f(y | x=1) = \frac{f(1,y)}{f(1)}\)</span> <span class="math inline">\(f(y | x=1) = \frac{f(1,0)}{0,2} = \frac{0}{0,2} = 0\)</span> <span class="math inline">\(f(y | x=1) = \frac{f(1,1)}{0,2} = \frac{0,1}{0,2} = 0,5\)</span> <span class="math inline">\(f(y | x=1) = \frac{f(1,2)}{0,2} = \frac{0,1}{0,2} = 0,5\)</span></p>
+<ol start="4" type="a">
+<li>Encontre a densidade condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X=0\)</span>:</li>
+</ol>
+<p><span class="math inline">\(f(y | x=0) = \frac{f(0,y)}{f_x(0)}\)</span> Como <span class="math inline">\(f_x(0) = 0,4\)</span> então: <span class="math inline">\(f(0 | X=0) = \frac{f(0,0)}{0,4} = \frac{0,3}{0,4} = 0,75\)</span> <span class="math inline">\(f(1 | X=0) = \frac{f(0,1)}{0,4} = \frac{0,1}{0,4} = 0,25\)</span> <span class="math inline">\(f(2 | X=0) = \frac{f(0,2)}{0,4} = \frac{0}{0,4} = 0\)</span></p>
+<ol start="4" type="a">
+<li>Encontre <span class="math inline">\(E(Y | x=1)\)</span> e a <span class="math inline">\(\text{Var}(Y|x=1)\)</span>:</li>
+</ol>
+<p>Esperança condicional: <span class="math inline">\(E(Y| x=1) = \sum_{\forall y} y , P(Y=y | x=1)\)</span> <span class="math inline">\(E(Y| x=1) = 0 \cdot 0 + 1 \cdot 0,5 + 2 \cdot 0,5 = 1,5\)</span></p>
+<p>Variância condicional: <span class="math inline">\(\sigma^2 = \text{Var}(Y|x=1) = E[(Y-μ)^2] = \sum_{\forall y} (y_i-μ)^2 \cdot P(Y=y_i | x=1)\)</span> <span class="math inline">\(\sigma^2 = \text{Var}(Y|x=1) = \sum_{\forall y} (y_i-μ)^2 \cdot f(y_i | x=1)\)</span> <span class="math inline">\(\text{Var}(Y|x=1) = (0-1,5)^2 \cdot 0 + (1-1,5)^2 \cdot 0,5 + (2-1,5)^2 \cdot 0,5\)</span> <span class="math inline">\(\text{Var}(Y|x=1) = 0,25\)</span></p>
+</section>
+<section id="solução" class="level3" data-number="6.0.13">
+<h3 data-number="6.0.13" class="anchored" data-anchor-id="solução"><span class="header-section-number">6.0.13</span> Solução</h3>
+<p>O espaço amostral é:</p>
+<p><span class="math inline">\(\Omega = {\overbrace{HHH}^{\text{(x=2,y=2)}}; \underbrace{HHT}*{*\text{(x=2,y=1)}}; \overbrace{HTH}^{\text{(x=1, y=1)}}; \underbrace{HTT}\text{(x=1 ,y=0)}; \overbrace{THH}^{\text{(x=1, y=2)}}; \underbrace{THT}*\text{(x=1 ,y=1)}; \overbrace{TTH}^{\text{(x=0, y=1)}}; \underbrace{TTT}\text{(x=0,y=0)}}\)</span></p>
+<p>Valores que tomam as variáveis: - (<span class="math inline">\(X = \{0,1,2\}\)</span>) - (<span class="math inline">\(Y = \{0,1,2\}\)</span>)</p>
+<p><strong>a) Encontre (</strong><span class="math inline">\(f(x,y)\)</span>)</p>
+<p><strong>Resolução:</strong></p>
+<span class="math display">\[\begin{array}{|c|c|c|}
+\hline
+f(x,y) &amp; P (\omega \in \Omega | X(\omega)=x,Y(\omega)=y) &amp; P \\
+\hline
+(0,0) &amp; P(\{TTT\}) &amp; \frac{1}{8} \\
+(0,1) &amp; P(\{TTH\}) &amp; \frac{1}{8} \\
+(1,0) &amp; P(\{HTT\}) &amp; \frac{1}{8} \\
+(1,1) &amp; P(\{HTH;THT\}) &amp; \frac{2}{8} \\
+(1,2) &amp; P(\{THH\}) &amp; \frac{1}{8} \\
+(2,1) &amp; P(\{HHT\}) &amp; \frac{1}{8} \\
+(2,2) &amp; P(\{HHH\}) &amp; \frac{1}{8} \\
+(0,2) &amp; P(\{\emptyset\}) &amp; 0 \\
+(2,0) &amp; P(\{\emptyset\}) &amp; 0 \\
+\hline
+\end{array}\]</span>
+<p><strong>b) Encontre (</strong><span class="math inline">\(f_x (x)\)</span>) e (<span class="math inline">\(f_y (y)\)</span>)</p>
+<p><span class="math inline">\(f_x (x) = \sum_{\text{todo } y} f(x,y) = f(x,0) + f(x,1) + f(x,2)\)</span></p>
+<p>( <span class="math display">\[\begin{align*}
+x=0 &amp; : f_1 (0) = f(0,0) + f(0,1) + f(0,2) = \frac{1}{8} + \frac{1}{8} + 0 = \frac{2}{8} \\
+x=1 &amp; : f_1 (1) = f(1,0) + f(1,1) + f(1,2) = \frac{1}{8} + \frac{2}{8} + \frac{1}{8} = \frac{4}{8} \\
+x=2 &amp; : f_1 (2) = f(2,0) + f(2,1) + f(2,2) = 0 + \frac{1}{8} + \frac{1}{8} = \frac{2}{8}
+  \end{align*}\]</span> )</p>
+<p>Logo,</p>
+<span class="math display">\[\begin{array}{|c|c|}
+\hline
+X &amp; f(x) = P(X=x) \\
+\hline
+0 &amp; \frac{2}{8} \\
+1 &amp; \frac{4}{8} \\
+2 &amp; \frac{2}{8} \\
+\hline
+\end{array}\]</span>
+<p><strong>c) Encontre ( E(X) ) e (</strong> (X) )</p>
+<p><span class="math inline">\(E(X) = \sum\_{\forall x} f(x,y) = 0f(0) + 1f(1) + 2f(2) = 0 \cdot \frac{2}{8} + 1 \cdot \frac{4}{8} + 2 \cdot \frac{2}{8} = 1\)</span></p>
+<p><span class="math inline">\(\text{Var}(X) = E\)</span>(X - )^2$ = _{x} (X - )^2 f(x) = (0 - )^2 + (1 - )^2 + (2 - )^2 $</p>
+<p><strong>d) Encontre ( E(Y|X=1) )</strong></p>
+<p><span class="math inline">\(f(y\|x) = \frac{f(x,y)}{f(x)}\)</span></p>
+<p><span class="math inline">\(f(y\|x=1) = \frac{f(1,y)}{f(1)}\)</span></p>
+<p>[ <span class="math display">\[\begin{align*}
+y=0 &amp; : f(Y|X=1) = f(0|1) = \frac{f(1,0)}{f(1)} = \frac{\frac{1}{8}}{\frac{4}{8}} = \frac{1}{4} \\
+y=1 &amp; : f(Y|X=1) = f(1|1) = \frac{f(1,1)}{f(1)} = \frac{\frac{2}{8}}{\frac{4}{8}} = \frac{2}{4} \\
+y=2 &amp; : f(Y|X=1) = f(2|1) = \frac{f(1,2)}{f(1)} = \frac{\frac{1}{8}}{\frac{4}{8}} = \frac{1}{4}
+\end{align*}\]</span> ]</p>
+<p><span class="math inline">\(Y \quad f(Y|X=1)\)</span> |<span class="math inline">\(Y\)</span> |<span class="math inline">\(f(Y|X=1)\)</span> | | —— | ————- | | 0 |<span class="math inline">\(\frac{1}{4}\)</span> | | 1 |<span class="math inline">\(\frac{2}{4}\)</span> | | 2 |<span class="math inline">\(\frac{1}{4}\)</span> |</p>
+<p><span class="math inline">\(E(Y|X=1)\)</span> <span class="math inline">\(0 \times \frac{1}{4} + 1 \times \frac{2}{4} + 2 \times \frac{1}{4} = 1\)</span></p>
+<p><span class="math inline">\(\text{Var}(Y|X=1)\)</span> <span class="math inline">\(\text{Var}(Y|X=1) = E((Y-E(Y│X=1))^2│X=1)\)</span> <span class="math inline">\(= \sum_{y} (Y-E(Y|X=1))^2 f(Y|X=1)\)</span> <span class="math inline">\(= (0-1)^2 (0,25) + (1-1)^2 (0,5) + (2-1)^2 (0,25)\)</span> <span class="math inline">\(= 1(0,25) + 0(0,5) + 1(0,25) = 0,25 + 0,25 = 0,5\)</span></p>
+<p><strong>Exemplo 3:</strong></p>
+<p>Seja <span class="math inline">\(f(x,y) = \begin{cases} kxy^2 &amp; 0 &lt; x &lt; 1 \text{ e } 0 &lt; y &lt; 1 \\ 0 &amp; \text{caso contrário} \end{cases}\)</span>, em que <span class="math inline">\(f(x,y)\)</span> é uma função densidade conjunta. Pede-se: a) Encontre o valor de <span class="math inline">\(k\)</span> b) Encontre <span class="math inline">\(E(X)\)</span> e <span class="math inline">\(\text{Var}(X)\)</span> c) Encontre <span class="math inline">\(f(Y|X)\)</span> d) As variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes? e) Encontre <span class="math inline">\(E(Y|X=0,5)\)</span> e <span class="math inline">\(E(Y|X=0,8)\)</span>.</p>
+<p><strong>Solução:</strong></p>
+<p><strong>a) Encontre o valor de</strong> <span class="math inline">\(k\)</span></p>
+<p>Da propriedade de função densidade de probabilidade conjunta temos: <span class="math inline">\(\int_{0}^{1} \int_{0}^{1} kxy^2 \,dx\,dy = 1\)</span> <span class="math inline">\(\int_{0}^{1} \int_{0}^{1} kxy^2 \,dx\,dy = \int_{0}^{1} ky^2 \left( \int_{0}^{1} x \,dx \right) \,dy = k\int_{0}^{1} y^2 \,dy = \frac{k}{2} \int_{0}^{1} y^2 \,dy = \frac{k}{6} = 1\)</span></p>
+<p>Temos: <span class="math inline">\(\frac{k}{6} = 1 \quad \Rightarrow \quad k = 6\)</span></p>
+<p><strong>b) Encontre</strong> <span class="math inline">\(E(X)\)</span></p>
+<p><span class="math inline">\(E(X) = \int_{0}^{1} x f_X (x) \,dx\)</span></p>
+<p>Precisamos encontrar a densidade marginal de <span class="math inline">\(x\)</span> para podermos calcular a esperança: <span class="math inline">\(f_X (x) = \int_{0}^{1} f(x,y) \,dy\)</span></p>
+<p><span class="math inline">\(f_X (x) = \int_{0}^{1} 6xy^2 \,dy = 6x \left[ \frac{y^3}{3} \right]_{0}^{1} = 2x\)</span></p>
+<p>Procedendo com o cálculo da esperança:</p>
+<p><span class="math inline">\(E(X) = \int_{0}^{1} x (2x) \,dx = \int_{0}^{1} 2x^2 \,dx = 2 \left[ \frac{x^3}{3} \right]_{0}^{1} = \frac{2}{3}\)</span></p>
+<p><strong>Encontre</strong> <span class="math inline">\(\text{Var}(X)\)</span></p>
+<p><span class="math inline">\(\text{Var}(X) = E([x-E(X)]^2) = \int_{0}^{1} [x-E(X)]^2 f_X (x) \,dx\)</span> <span class="math inline">\(= \int_{0}^{1} [x-\frac{2}{3}]^2 2x \,dx\)</span> <span class="math inline">\(= \int_{0}^{1} 2x(x^2-\frac{4x}{3}+\frac{4}{9}) \,dx\)</span> <span class="math inline">\(= \int_{0}^{1} 2x^3 - \frac{8x^2}{3} + \frac{8x}{9} \,dx\)</span> <span class="math inline">\(= \left[ \frac{x^4}{2} \right]_{0}^{1} - \left[ \frac{8x^3}{9} \right]_{0}^{1} + \left[ \frac{4x^2}{9} \right]_{0}^{1}\)</span> <span class="math inline">\(= \frac{1}{2} - \frac{8}{9} + \frac{4}{9} = \frac{9}{18} - \frac{16}{18} + \frac{8}{18} = \frac{1}{18}\)</span></p>
+<p><strong>Encontre</strong> <span class="math inline">\(f(Y|X)\)</span></p>
+<p><span class="math inline">\(f(Y│X) = \frac{f(x,y)}{f(x)} = \frac{6xy^2}{2x} = 3y^2\)</span></p>
+<p><strong>As variáveis</strong> <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes?</p>
+<p>Se <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes a densidade conjunta de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> é igual ao produto das densidades marginais: <span class="math inline">\(f(x,y) = f_X (x) f_Y (y)\)</span></p>
+<p>No item b) encontramos <span class="math inline">\(f_X (x) = 2x\)</span>. Precisamos obter <span class="math inline">\(f_Y (y)\)</span>: <span class="math inline">\(f_Y (y) = \int_{-\infty}^{+\infty} f(x,y) \,dx\)</span> <span class="math inline">\(f_Y (y) = \int_{0}^{1} 6xy^2 \,dx = 6y^2 \left[ \frac{x^2}{2} \right]_{0}^{1} = 3y^2\)</span></p>
+<p>Multiplicando as densidades marginais obtemos a densidade conjunta:</p>
+<p><span class="math inline">\(f_X (x) f_Y (y) = 2x \times 3y^2 = 6xy^2 = f(x,y)\)</span></p>
+<p>Portanto <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes.</p>
+<p><strong>Encontre</strong> <span class="math inline">\(E(Y|X=0,5)\)</span> e <span class="math inline">\(E(Y|X=0,8)\)</span></p>
+<p><span class="math inline">\(E(Y│X=0,5) = \int_{-\infty}^{+\infty} yf(y|x=0,5) \,dy\)</span></p>
+<p><span class="math inline">\(E(Y│X=0,5) = \int_{0}^{1} yf(y|x=0,5) \,dy = \int_{0}^{1} y3y^2 \,dy = 3\int_{0}^{1} y^3 \,dy = 3\left[ \frac{y^4}{4} \right]_{0}^{1} = \frac{3}{4}\)</span></p>
+<p>Como a função densidade condicional <span class="math inline">\(f(y|x)\)</span> não depende de <span class="math inline">\(x\)</span>, então: <span class="math inline">\(E(Y│X=0,5) = E(Y│X=0,8) = \frac{3}{4}\)</span></p>
+<p><strong>Explique o motivo pelo qual</strong> <span class="math inline">\(E(Y|X=0,5)\)</span> e <span class="math inline">\(E(Y|X=0,8)\)</span> são iguais.</p>
+<p>Como <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes, <span class="math inline">\(f(Y|X)\)</span> não depende de valores de <span class="math inline">\(x\)</span> e portanto as duas esperanças condicionadas são iguais.</p>
+<p>Algumas relações são satisfeitas sobre a hipótese de independência:</p>
+<ul>
+<li><span class="math inline">\(E(Y|X) = E(Y)\)</span></li>
+<li><span class="math inline">\(E(X|Y) = E(X)\)</span></li>
+<li><span class="math inline">\(E(XY) = E(X)E(Y)\)</span></li>
+</ul>
+</section>
+<section id="definição-esperança-matemática" class="level3" data-number="6.0.14">
+<h3 data-number="6.0.14" class="anchored" data-anchor-id="definição-esperança-matemática"><span class="header-section-number">6.0.14</span> Definição: Esperança Matemática</h3>
+<section id="para-o-caso-contínuo" class="level4" data-number="6.0.14.1">
+<h4 data-number="6.0.14.1" class="anchored" data-anchor-id="para-o-caso-contínuo"><span class="header-section-number">6.0.14.1</span> Para o caso contínuo:</h4>
+<p><span class="math inline">\(E_{XY} (g(X,Y)) = \iint g(X,Y)f(X,Y) \,dxdy\)</span></p>
+</section>
+<section id="para-o-caso-discreto" class="level4" data-number="6.0.14.2">
+<h4 data-number="6.0.14.2" class="anchored" data-anchor-id="para-o-caso-discreto"><span class="header-section-number">6.0.14.2</span> Para o caso discreto:</h4>
+<p><span class="math inline">\(E_{XY} (g(X,Y)) = \sum \sum g(X,Y)f(X,Y) \quad \forall x \text{ e } \forall y\)</span></p>
+<p>Em particular, para <span class="math inline">\(g(X,Y) = XY\)</span> temos:</p>
+<p><span class="math inline">\(E(XY) = E_{XY} (XY) = \iint XY \,f(X,Y) \,dxdy\)</span></p>
+<p>Se <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes, então:</p>
+<p><span class="math inline">\(E(XY) = E(X)E(Y)\)</span></p>
+<p>Para duas funções contínuas <span class="math inline">\(U\)</span> e <span class="math inline">\(V\)</span>:</p>
+<p><span class="math inline">\(E(U(X)V(Y)) = E(U(X)) \cdot E(V(Y))\)</span></p>
+<p><strong>Exemplo:</strong></p>
+<p>Sendo <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> independentes então:</p>
+<p><span class="math inline">\(E(e^{tX} e^{tY} ) = E(e^{tX} )E(e^{tY} )\)</span></p>
+<p><strong>Teorema: Lei das Expectativas Iteradas (LEI)</strong></p>
+<p>Sejam <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> duas variáveis aleatórias. Então:</p>
+<p><span class="math inline">\(E(Y) = E(E(Y |X))\)</span></p>
+<p>Ou também:</p>
+<p><span class="math inline">\(E(X) = E(E(X |Y))\)</span></p>
+<p>Escrito de outra forma:</p>
+<p><span class="math inline">\(E_Y (Y) = E_X (E_{(y|x)} (Y |X))\)</span></p>
+<p>Em geral, considerando uma função <span class="math inline">\(g\)</span>, a LEI fica como:</p>
+<p><span class="math inline">\(E_{XY} [g(Y)] = E_X (E_{(y |x)} (g(Y) | X))\)</span></p>
+<p><strong>Prova</strong></p>
+<p>Mostraremos <span class="math inline">\(E(X) = E(E(X |Y))\)</span> para o caso contínuo.</p>
+<p>Partimos da definição de esperança, densidade marginal e densidade condicional:</p>
+<p><span class="math inline">\(E(X) = \int_{x} x f_X (x) \,dx \quad (1)\)</span></p>
+<p><span class="math inline">\(f_X (x) = \int_{y} f(x,y) \,dy \quad (2)\)</span></p>
+<p><span class="math inline">\(f(x|y) = \frac{f(x,y)}{f_Y (y)} \rightarrow f(x,y) = f(x|y) f_Y (y) \quad (3)\)</span></p>
+<p>Substituindo <span class="math inline">\((2)\)</span> em <span class="math inline">\((1)\)</span>:</p>
+<p><span class="math inline">\(E(X) = \int_{x} x \cdot f_X (x) \,dx = \int_{x} x \cdot \left[ \int_{y} f(x,y) \,dy \right] \,dx \quad (4)\)</span></p>
+<p>Substituindo <span class="math inline">\((3)\)</span> em <span class="math inline">\((4)\)</span>:</p>
+<p><span class="math inline">\(E(X) = \int_{x} \int_{y} x \cdot f(x|y) \cdot f_Y (y) \,dy \,dx\)</span></p>
+<p><span class="math inline">\(E(X) = \int_{y} \left[ \int_{x} x \cdot f(x|y) \,dx \right] \cdot f_Y (y) \,dy\)</span></p>
+<p><span class="math inline">\(E(X) = \int_{y} E(X|Y) \cdot f_Y (y) \,dy\)</span></p>
+<p>Finalmente,</p>
+<p><span class="math inline">\(E(X) = E(E(X |Y))\)</span></p>
+</section>
+</section>
+<section id="exercício" class="level3" data-number="6.0.15">
+<h3 data-number="6.0.15" class="anchored" data-anchor-id="exercício"><span class="header-section-number">6.0.15</span> Exercício:</h3>
+<p>Demonstre que:</p>
+<p><span class="math inline">\(E(Y) = E(E(Y |X))\)</span></p>
+</section>
+<section id="aplicações" class="level3" data-number="6.0.16">
+<h3 data-number="6.0.16" class="anchored" data-anchor-id="aplicações"><span class="header-section-number">6.0.16</span> Aplicações:</h3>
+<p><span class="math inline">\(E(Y|X)\)</span> é chamado de regressão de <span class="math inline">\(y\)</span> em <span class="math inline">\(x\)</span> e é muito usado em econometria.</p>
+<p><strong>Exemplo 4 (Aplicação Econometria):</strong></p>
+<p><span class="math inline">\(y_i = \alpha + \beta x_i + \epsilon_i\)</span> <span class="math inline">\(E(\epsilon_i |x) = 0\)</span></p>
+<ul>
+<li>Calcule <span class="math inline">\(E(\epsilon_i)\)</span></li>
+<li>Calcule <span class="math inline">\(Cov(x_i,\epsilon_i)\)</span></li>
+</ul>
+<p><strong>Solução</strong></p>
+<p>Usando a lei das expectativas iteradas:</p>
+<p><span class="math inline">\(E(E(Y|X)) = E(Y)\)</span></p>
+<p>Aplicamos o operador esperança dos dois lados da equação <span class="math inline">\(E(\epsilon_i | x) = 0\)</span>:</p>
+<p><span class="math inline">\(E(E(\epsilon_i | x)) = E(0) = 0\)</span></p>
+<p>Pela LEI,</p>
+<p><span class="math inline">\(E(\epsilon_i) = 0\)</span></p>
+<ul>
+<li>Calcule <span class="math inline">\(Cov(x_i,\epsilon_i)\)</span>:</li>
+</ul>
+<p>Podemos usar o importante corolário:</p>
+<p><span class="math inline">\(Cov(X,Y) = E(XY) - E(X)E(Y)\)</span></p>
+<p><span class="math inline">\(Cov(x_i,\epsilon_i) = E(x_i \epsilon_i) - E(x_i)E(\epsilon_i)\)</span></p>
+<p>No item anterior encontramos <span class="math inline">\(E(\epsilon_i) = 0\)</span> portanto:</p>
+<p><span class="math inline">\(Cov(x_i,\epsilon_i) = E(x_i \epsilon_i)\)</span></p>
+<p>Considere:</p>
+</section>
+<section id="observe" class="level3" data-number="6.0.17">
+<h3 data-number="6.0.17" class="anchored" data-anchor-id="observe"><span class="header-section-number">6.0.17</span> Observe:</h3>
+<p><span class="math inline">\(E(XY|X) = XE(Y|X)\)</span></p>
+<p><span class="math inline">\(E(\sqrt{X}Y|X) = \sqrt{X}E(Y|X)\)</span></p>
+<p><span class="math inline">\(E(X^2 Y|X) = X^2 E(Y|X)\)</span></p>
+</section>
+<section id="cálculo-de-ex_i-ε_ix_i" class="level3" data-number="6.0.18">
+<h3 data-number="6.0.18" class="anchored" data-anchor-id="cálculo-de-ex_i-ε_ix_i"><span class="header-section-number">6.0.18</span> Cálculo de <span class="math inline">\(E(x_i ε_i|x_i)\)</span></h3>
+<p><span class="math inline">\(E(x_i ε_i|x_i) = x_i E(ε_i|x_i) = x_i (0) = 0\)</span></p>
+<p><span class="math inline">\(E(x_i ε_i|x_i) = 0\)</span></p>
+<p>Aplicando a LEI:</p>
+<p><span class="math inline">\(E(E(x_i ε_i|x_i)) = E(0) = 0\)</span></p>
+<p><span class="math inline">\(E(x_i ε_i) = 0\)</span></p>
+<p>Ou seja,</p>
+<p><span class="math inline">\(Cov(x_i,ε_i) = E(x_i ε_i) = 0\)</span></p>
+<p>Note que <span class="math inline">\(E(x_i ε_i|x_i) = x_i E(ε_i|x_i)\)</span> pois ao condicionarmos em <span class="math inline">\(x_i\)</span> a variável passa a ser considerada uma constante e pode “sair” da esperança.</p>
+<p>Aplicando o operador esperança dos dois lados e usando a lei das expectativas iteradas:</p>
+<p><span class="math inline">\(E(E(x_i ε_i|x_i)) = E(0) \rightarrow E(x_i ε_i) = 0\)</span></p>
+<p>Portanto <span class="math inline">\(Cov(x_i,ε_i) = E(x_i∙ε_i) = 0\)</span></p>
+</section>
+<section id="teorema---função-geradora-de-momentos-para-combinações-lineares" class="level3" data-number="6.0.19">
+<h3 data-number="6.0.19" class="anchored" data-anchor-id="teorema---função-geradora-de-momentos-para-combinações-lineares"><span class="header-section-number">6.0.19</span> Teorema - Função Geradora de Momentos para Combinações Lineares</h3>
+<p>Sejam <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> variáveis aleatórias independentes com funções geradoras de momentos <span class="math inline">\(M_X (t)\)</span> e <span class="math inline">\(M_Y (t)\)</span> respectivamente. Então a fgm da variável <span class="math inline">\(Z=X+Y\)</span> é dada por:</p>
+<p><span class="math inline">\(M_Z (t) = M_X (t) M_Y (t)\)</span></p>
+<section id="prova" class="level4" data-number="6.0.19.1">
+<h4 data-number="6.0.19.1" class="anchored" data-anchor-id="prova"><span class="header-section-number">6.0.19.1</span> Prova:</h4>
+<p>Partindo da definição de função geradora de momentos:</p>
+<p><span class="math inline">\(M_Z (t) = E(e^tZ) = E(e^{t(X+Y)}) = E(e^tX∙e^tY)\)</span></p>
+<p><span class="math inline">\(E(e^tX)∙E(e^tY) = M_X (t) M_Y (t)\)</span></p>
+</section>
+</section>
+<section id="covariância" class="level3" data-number="6.0.20">
+<h3 data-number="6.0.20" class="anchored" data-anchor-id="covariância"><span class="header-section-number">6.0.20</span> Covariância</h3>
+<p>É o momento conjunto mais importante. A covariância entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> é definida como:</p>
+<p><span class="math inline">\(\sigma_{XY} = cov(X,Y) = E[(X-μ_X)(Y-μ_Y)]\)</span></p>
+<p>Onde, <span class="math inline">\(-∞ &lt; \sigma_{XY} &lt; ∞\)</span>, <span class="math inline">\(μ_X = E(X)\)</span>, e <span class="math inline">\(μ_Y = E(Y)\)</span>.</p>
+<section id="cálculo-da-covariância" class="level4" data-number="6.0.20.1">
+<h4 data-number="6.0.20.1" class="anchored" data-anchor-id="cálculo-da-covariância"><span class="header-section-number">6.0.20.1</span> Cálculo da covariância</h4>
+<p><span class="math inline">\(Cov(X,Y) = ∑_x ∑_y (x-E(X))(y-E(Y))P(X=x_i,Y=y_i)\)</span></p>
+<p>Para <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> discretas:</p>
+<p><span class="math inline">\(Cov(X,Y) = ∫_{-∞}^{∞} ∫_{-∞}^{∞} (x-E(X))(y-E(Y))f(x,y)dxdy\)</span></p>
+<p>Para <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> contínuas.</p>
+<p>Em que <span class="math inline">\(P(X=x_i,Y=y_i) = f(x_i,y_i)\)</span> é a função de probabilidade conjunta de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>, e <span class="math inline">\(f(x,y)\)</span> é a função de densidade conjunta das variáveis aleatórias <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.</p>
+</section>
+</section>
+<section id="correlação" class="level3" data-number="6.0.21">
+<h3 data-number="6.0.21" class="anchored" data-anchor-id="correlação"><span class="header-section-number">6.0.21</span> Correlação</h3>
+<p>Mede o grau de associação linear entre duas variáveis</p>
+<p><span class="math inline">\(ρ_{XY} = corr(X,Y) = \frac{cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}} = \frac{cov(X,Y)}{σ_X σ_Y}\)</span></p>
+<p>Onde, <span class="math inline">\(-1≤ρ_{XY}≤1\)</span></p>
+<p>Observação: Se <span class="math inline">\(cov(X,Y)=0\)</span> → <span class="math inline">\(corr(X,Y)=0\)</span>, → <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são correlacionados, ou seja, <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são independentes</p>
+</section>
+<section id="teorema" class="level3" data-number="6.0.22">
+<h3 data-number="6.0.22" class="anchored" data-anchor-id="teorema"><span class="header-section-number">6.0.22</span> Teorema</h3>
+<p>Se <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes, então, <span class="math inline">\(cov(X,Y)=corr(X,Y)=0\)</span>.</p>
+<p>Demonstração: Usamos a condição: se <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes, então:</p>
+<p><span class="math inline">\(E(XY) = E(X)E(Y)\)</span></p>
+<p>Logo, da definição de covariância:</p>
+<p><span class="math inline">\(Cov(X,Y) = E(XY) - E(X)E(Y) = E(X)E(Y) - E(X)E(Y) = 0\)</span></p>
+<p>Ou a forma mais geral para duas funções <span class="math inline">\(U\)</span> e <span class="math inline">\(V\)</span>:</p>
+<p><span class="math inline">\(E(U(X)V(Y)) = E(U(X))E(V(Y))\)</span></p>
+<p>Logo na definição de Covariância:</p>
+<p><span class="math inline">\(\sigma_{XY} = cov(X,Y) = E[(X-μ_X)(Y-μ_Y)] = [E_{xy}(X-μ_X)][E_{xy}(Y-μ_Y)] = [E_{xy}(X)-E_{xy}(μ_X)][E_{xy}(Y)-E_{xy}(μ_Y)] = [μ_X-μ_X][μ_Y-μ_Y] = 0\)</span></p>
+<p><span class="math inline">\(\sigma_{XY} = cov(X,Y) = E_x(X-μ_X) E_y(Y-μ_Y) = 0\)</span></p>
+<p>Para a correlação:</p>
+<p><span class="math inline">\(ρ_{XY} = \frac{cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}} = \frac{cov(X,Y)}{σ_X σ_Y} = 0\)</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./aula03.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aula 03</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
